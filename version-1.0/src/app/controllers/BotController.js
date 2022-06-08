@@ -1,6 +1,12 @@
+import { api } from '../../services/api';
+
 class BotController {
-  index(req, res) {
-    return res.send({ ok: true });
+  async index(req, res) {
+    const response = await api.get('');
+
+    const binance = response.data;
+
+    return res.send({ binance });
   }
 }
 
