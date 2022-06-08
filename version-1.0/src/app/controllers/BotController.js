@@ -4,9 +4,9 @@ class BotController {
   async index(req, res) {
     const response = await api.get('');
 
-    const binance = response.data;
+    const candle = response.data[499];
 
-    return res.send({ binance });
+    return res.send(candle[4]);
   }
 }
 
