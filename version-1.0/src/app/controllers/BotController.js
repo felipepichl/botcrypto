@@ -25,9 +25,20 @@ class BotController {
 
     const strength = gains / losses;
 
-    const result = 100 - 100 / (1 + strength);
+    const rsi = 100 - 100 / (1 + strength);
 
-    return res.send({ rsi: result });
+    let bought = false;
+
+    if (rsi > 70) {
+      bought = false;
+      return res.send({ rsi: 'Sobrecomprado' });
+    }
+    if (rsi < 30 && !bought) {
+      bought = true;
+      return res.send({ rsi: 'Sobrevendido' });
+    }
+
+    return res.send({ rsi });
   }
 }
 
