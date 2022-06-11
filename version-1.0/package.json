@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "imersao-bot-cripto-api": "https://github.com/luiztools/imersao-bot-cripto-api"
   },
   "devDependencies": {
     "eslint": "^6.7.2",
